@@ -1,0 +1,12 @@
+<!--This calls the base.html code, ensuring the unique code can be edited without hassle-->
+{% extends "blog/base.html" %}
+<!--Prevents extends code from overwritting unique code-->
+{% block content %}
+
+    <!--The curly brackets enable if statements-->
+    {% for post in posts %}
+        <h1>{{ post.title }}</h1>
+        <p>By {{ post.author }} on {{ post.date_posted }}</p>       
+        <p>{{  post.content }}</p>
+    {% endfor %}
+{% endblock content %}
